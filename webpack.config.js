@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-module.exports = {
+var config = {
   context: __dirname + '/app',
   entry: './index.js',
   output: {
@@ -13,23 +13,15 @@ plugins:[
 ],
   module: {
     loaders: [
-      {
-        test: /\.js$/, loader: 'babel',
-        exclude: /node_modules/,
-        query: {
-        presets: ['es2015']
-              }
-      },
-      {
-        test: /\.html$/,
-         loader: 'raw',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-         loader: 'style!css',
-        exclude: /node_modules/
-      }
+      { test: /\.js$/,loaders:['ng-annotate','babel?presets=es2015'],exclude: /node_modules/},
+      { test: /\.html$/, loader: 'raw', exclude: /node_modules/},
+      {test: /\.css$/,loader: 'style!css',exclude: /node_modules/}
     ]
   }
 };
+if(process.env.NODE_ENV === "production"){
+  config.output.path = __dirname + "/dist";
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  config.devtool = 'source-map';
+}
+module.exports = config;

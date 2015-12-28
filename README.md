@@ -16,6 +16,8 @@ klona projektet från github och kör npm install
 
 > - Installera webpack globalt med npm install -g webpack .
 
+Kör npm install
+
 Starta applikationen med
 
 > npm start

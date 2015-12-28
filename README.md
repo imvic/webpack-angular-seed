@@ -3,25 +3,25 @@ Webpack + Angular
 
 
 
-Angular  kom igång projekt med webpack 
+Angular kom-igång-projekt med webpack 
 ----------
 
 
 Utvecklings miljö
 -------------
 
-cheka ut projekt från github och kör npm install
+klona projektet från github och kör npm install
 
 > **Note:**
 
-> - Installera webpack global med npm install -g webpack .
+> - Installera webpack globalt med npm install -g webpack .
 
-Starta applikation med
+Starta applikationen med
 
 > npm start
 
 
-Testting av applikation
+Test av applikation
 -------------
 Applikation testas med karma, karma-chai, karma-webpack.
 för köra tester kör 
